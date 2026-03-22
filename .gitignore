@@ -1,24 +1,34 @@
-# eclipse
-bin
-*.launch
-.settings
-.metadata
-.classpath
-.project
+# Gradle
+.gradle/
+bin/
+build/
+libs/
+out/
 
-# idea
-out
+# IntelliJ IDEA
+.idea/
+*.iml
 *.ipr
 *.iws
-*.iml
-.idea/*
-!.idea/scopes
 
-# gradle
-build
-.gradle
+# Eclipse
+.classpath
+.eclipse/
+.metadata
+.project
+.settings
 
-# other
-eclipse
-run
-runs
+# VS Code
+.vscode/
+
+# Logs
+logs/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Minecraft Modding
+run/
+**/src/main/generated/.cache/
