@@ -4,9 +4,9 @@ plugins {
 
 loom {
     // Automatically enable AccessWideners if the file exists
-    def aw = file("src/main/resources/${project.mod_id}.classtweaker")
-    if (aw.exists()) {
-        accessWidenerPath.set(aw)
+    def awFile = file("src/main/resources/${project.mod_id}.classtweaker")
+    if (awFile.exists()) {
+        accessWidenerPath.set(awFile)
     }
 }
 
