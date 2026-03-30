@@ -6,7 +6,7 @@ loom {
     // Automatically convert AccessWideners to AccessTransformers if the file exists
     def awFile = project(':common').file("src/main/resources/${project.mod_id}.classtweaker")
     if (awFile.exists()) {
-        convertAw2At(tasks.named('jar'), ["${project.mod_id}.classtweaker"])
+        convertAw2At(tasks.named('jar', Jar), ["${project.mod_id}.classtweaker"])
     }
 
     runs {
@@ -28,5 +28,5 @@ repositories {
 }
 
 dependencies {
-    neoForge "net.neoforged:neoforge:${project.neoforge_version}"
+    forgeUserdev "net.neoforged:neoforge:${project.neoforge_version}:userdev"
 }
