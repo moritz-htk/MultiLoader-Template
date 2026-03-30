@@ -47,8 +47,16 @@ processResources {
             neoforge_version       : neoforge_version
     ]
 
-    filesMatching(['fabric.mod.json', 'META-INF/neoforge.mods.toml']) {
+    var jsonReplaceProperties = replaceProperties.collectEntries {
+        key, value -> [(key): value instanceof String ? value.replace("\n", "\\\\n") : value]
+    }
+
+    filesMatching(['META-INF/mods.toml', 'META-INF/neoforge.mods.toml']) {
         expand replaceProperties
+    }
+
+    filesMatching(['pack.mcmeta', 'fabric.mod.json', '*.mixins.json']) {
+        expand jsonReplaceProperties
     }
 
     inputs.properties replaceProperties
