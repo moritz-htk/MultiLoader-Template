@@ -1,5 +1,5 @@
 plugins {
-    id 'org.relativitymc.neo-loom'
+    id 'org.relativitymc.neo-loom-remap'
     id 'java-library'
     id 'maven-publish'
     id 'idea'
@@ -20,6 +20,7 @@ repositories {
 
 dependencies {
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    mappings loom.officialMojangMappings()
 }
 
 jar {
